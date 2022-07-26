@@ -12,5 +12,6 @@ Type some commands, e.g.<br/>
 >
 > `whoami`
 
-
 <br/>
+
+Press Enter after inputted the command.

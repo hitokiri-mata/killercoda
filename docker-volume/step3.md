@@ -25,7 +25,7 @@ We can run a command in a running container by using the `docker exec` command. 
 
 Check the running processes and locate the process with Process ID (PID) 1 within the container. Execute:
 
-> `ps`{{execute}}.
+> `ps`{{execute}}
 
 The container will keep running as the run command will continuously ping 8.8.8.8 (and so the PID 1 process remains active). 
 

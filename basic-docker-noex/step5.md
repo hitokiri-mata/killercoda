@@ -14,4 +14,4 @@ Type some commands, e.g.<br/>
 
 <br/>
 
-Press Enter after inputted the command.
+Click Enter after each command is inputted.

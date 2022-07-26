@@ -1,0 +1,46 @@
+{
+  "title": "Building Docker Images ",
+  "description": "",
+  "difficulty": "Beginner",
+  "time": "20",
+  "details": {
+    "steps": [
+      {
+        "text": "s1.md"
+      },
+      {
+        "text": "s1b.md"
+      },
+      {
+        "text": "s1c.md"
+      },
+	  {
+        "text": "s2.md"
+      },
+      {
+        "text": "s3.md"
+      },   
+      {
+        "text": "s4.md"
+      }   
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "files": [
+         "Dockerfile","app.py","requirements.txt"
+    ],
+  "environment": {
+    "uilayout": "editor-terminal",
+	"uisettings": "bash",
+	"exclusionPatterns": ["*verify*"],
+	"hideHiddenFiles": true
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}

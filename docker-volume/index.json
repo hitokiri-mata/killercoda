@@ -1,0 +1,31 @@
+{
+  "title": "Bind Mount and Docker Volumes",
+  "description": "",
+  "difficulty": "Beginner",
+  "time": "20",
+  "details": {
+    "steps": [
+      {"text": "step1.md"},
+      {"text": "step2.md", "answer": "step2-answer.md"},
+      {"text": "step3.md"},    
+      {"text": "step4.md"},
+      {"text": "step5.md"},
+      {"text": "step6a.md", "answer": "step6-ans.md"},
+      {"text": "step7.md"},
+      {"text": "step8.md"}
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}

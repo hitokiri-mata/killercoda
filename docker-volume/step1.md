@@ -34,7 +34,9 @@ We will now check how the read-write layers in the container can be accessed fro
 Alternatively, we can also use the Go template notation and to get the content of the **GraphDriver** keys right away.
 
 > `apt install jq`{{execute}}
-> 
+
+<br/>
+
 > `docker container inspect -f "{{json .GraphDriver}}" c1 | jq`{{execute}}
 
 

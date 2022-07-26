@@ -2,38 +2,42 @@
 
 First,  run an interactive `sh` shell within an Alpine Linux container named c1. Execute:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker run --name c1 -it alpine sh </span>
+> `docker run --name c1 -it alpine sh`
 
 Inside the container, we will create a file `hello.txt` in the folder. Execute:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> echo "Hello World!" > hello.txt </span>
+> `echo "Hello World!" > hello.txt`
 
 Check that the file `hello.txt` is created. Execute:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> ls -l </span>
+> `ls -l`
 
 You may show the content of the file using the `cat` command. Execute:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> cat hello.txt </span>
+> `cat hello.txt`
 
 Exit the container. Execute:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> exit </span>
+> `exit`
 
 
 Now, check the state of the `c1 container`.  Execute:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker ps -a </span>
+> `docker ps -a`
 
 The container has been stopped but the container's filesystem still exists in the host.
 
 We will now check how the read-write layers in the container can be accessed from the host. To get the location of the container's layers, we can use the `inspect` command and scroll the output until you find the **GraphDriver** attribute.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker container inspect c1 </span>
+> `docker container inspect c1`
 
 Alternatively, we can also use the Go template notation and to get the content of the **GraphDriver** keys right away.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker container inspect -f "{{json .GraphDriver}}" c1 | jq </span>
+> `apt install jq`{{execute}}
+
+<br/>
+
+> `docker container inspect -f "{{json .GraphDriver}}" c1 | jq`
 
 
 You should get an output similar to the following  (you will get different ID for the directory paths)

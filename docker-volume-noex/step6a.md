@@ -5,16 +5,16 @@ Bind mounts have limited functionality compared to Docker volumes. When you use 
 
 First, check  the commands available in the Docker volume API. Execute
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker volume --help </span>
+> `docker volume --help`
 
 
 We will start with the create command, and create a volume named **web_folder**.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker volume create web_folder </span>
+> `docker volume create web_folder`
 
 Check that the volume is created.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker volume ls </span>
+> `docker volume ls`
 
 
 Sample output:
@@ -26,7 +26,7 @@ local               web_folder
 
 Inspect the details about the created Docker volume.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker volume inspect web_folder </span>
+> `docker volume inspect web_folder`
 
 ```
 [
@@ -46,18 +46,18 @@ The **Mountpoint** attributes shows the path on the Docker host where the volume
 
 List the files in the container's mountpoint. 
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> ls /var/lib/docker/volumes/web_folder/_data </span>
+> `ls /var/lib/docker/volumes/web_folder/_data`
 
 Currently, the folder should be empty.
 
 Nginx  is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. We will run an Nginx image and mount the **web_folder** volume from the host onto **/usr/share/nginx/html** folder within the container. 
 The folder `/usr/share/nginx/html` is the default folder served by the nginx container.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> docker container run --name www -d -p 8080:80 -v web_folder:/usr/share/nginx/html nginx </span>
+> `docker container run --name www -d -p 8080:80 -v web_folder:/usr/share/nginx/html nginx`
 
 We have used the -p option to map the nginx default port (80) in the container to a port on the host (8080). We can verify that the nginx web server at `localhost:8080` by executing the following command:
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> curl localhost:8080 </span>
+> `curl localhost:8080`
 
 
 Sample output:
@@ -93,7 +93,7 @@ Commercial support is available at
 From the host,  let's have a look at the content of the volume by listing 
 the files in the container's mountpoint again.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> ls /var/lib/docker/volumes/web_folder/_data </span>
+> `ls /var/lib/docker/volumes/web_folder/_data`
 
 **Question:** 
 What file(s) is/are stored in the folder?

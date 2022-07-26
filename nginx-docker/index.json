@@ -1,0 +1,68 @@
+{
+  "title": "Nginx",
+  "description": "",
+  "difficulty": "Beginner",
+  "time": "20",
+  "details": {
+    "steps": [
+      {
+
+        "text": "step1.md"
+      },
+      {
+
+        "text": "step2.md"
+      },
+      {
+
+        "text": "step3.md"
+      },
+	  {
+
+        "text": "step4.md"
+      },
+      {
+
+        "text": "step5.md"
+      } ,      
+	  {
+ 
+        "text": "step6.md"
+      } ,
+	  {
+
+        "text": "step7.md",
+        "commented-verify": "step7-verify.sh"
+      },
+     {
+
+        "text": "step8.md"
+      },
+      {
+  
+        "text": "step9.md"
+      }
+	  
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+	"assets": {
+        "host01": [
+            {"file": "input_name", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+	"uisettings": "bash",
+	"exclusionPatterns": ["*verify*"],
+	"hideHiddenFiles": true
+  },
+  "backend": {
+    "imageid": "ubuntu:1804"
+  }
+}

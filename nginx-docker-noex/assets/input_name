@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+echo "Please input your student ID:"
+read myid
+echo $myid > myid
+
+
+echo "Please input your name:"
+read myname
+echo $myname > myname
+

@@ -1,0 +1,31 @@
+{
+  "title": "MongoDB Basics",
+  "description": "Learn the basics of MongoDB with docker.",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "text": "step1.md"
+      },
+      {
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uisettings": "bash",
+    "exclusionPatterns": ["*verify*"],
+    "hideHiddenFiles": true
+  },
+  "backend": {
+    "imageid": "ubuntu:1804"
+  }
+}

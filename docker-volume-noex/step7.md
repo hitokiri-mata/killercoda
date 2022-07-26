@@ -14,7 +14,7 @@ END
 
 Verify that the website served by the Nginx container at localhost:8080 is updated.
 
-> <span align="left" style="color:#FFF;background:#555;font:Courier New; font-size: 90%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"> curl localhost:8080 </span>
+> `curl localhost:8080`
 
 **Question:** 
 What is the output of the curl command?
